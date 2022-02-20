@@ -22,7 +22,7 @@ BiliBiliTool
 
 <!-- TOC depthFrom:2 -->
 
-- [1. 如何使用](#1-如何使用)
+- [1. 如何使用](#1-如何使用) 
     - [1.1. 第一步：获取自己的 Cookie](#11-第一步获取自己的-cookie)
     - [1.2. 第二步：配置 Cookie 并运行 BiliBiliTool](#12-第二步配置-cookie-并运行-bilibilitool)
         - [1.2.1. 方式一：xxx](#121-方式一xxx)
