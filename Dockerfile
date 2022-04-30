@@ -1,9 +1,9 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/runtime:5.0 AS base
+FROM mcr.microsoft.com/dotnet/runtime:6.0 AS base
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /code
 COPY ["src/Ray.BiliBiliTool.Console/Ray.BiliBiliTool.Console.csproj", "src/Ray.BiliBiliTool.Console/"]
 COPY ["src/Ray.BiliBiliTool.DomainService/Ray.BiliBiliTool.DomainService.csproj", "src/Ray.BiliBiliTool.DomainService/"]
@@ -20,6 +20,8 @@ COPY ["src/Ray.Serilog.Sinks/Ray.Serilog.Sinks.OtherApiBatched/Ray.Serilog.Sinks
 COPY ["src/Ray.Serilog.Sinks/Ray.Serilog.Sinks.DingTalkBatched/Ray.Serilog.Sinks.DingTalkBatched.csproj", "src/Ray.Serilog.Sinks/Ray.Serilog.Sinks.DingTalkBatched/"]
 COPY ["src/Ray.Serilog.Sinks/Ray.Serilog.Sinks.PushPlusBatched/Ray.Serilog.Sinks.PushPlusBatched.csproj", "src/Ray.Serilog.Sinks/Ray.Serilog.Sinks.PushPlusBatched/"]
 COPY ["src/Ray.Serilog.Sinks/Ray.Serilog.Sinks.ServerChanBatched/Ray.Serilog.Sinks.ServerChanBatched.csproj", "src/Ray.Serilog.Sinks/Ray.Serilog.Sinks.ServerChanBatched/"]
+COPY ["src/Ray.Serilog.Sinks/Ray.Serilog.Sinks.MicrosoftTeamsBatched/Ray.Serilog.Sinks.MicrosoftTeamsBatched.csproj", "src/Ray.Serilog.Sinks/Ray.Serilog.Sinks.MicrosoftTeamsBatched/"]
+COPY ["src/Ray.Serilog.Sinks/Ray.Serilog.Sinks.WorkWeiXinAppBatched/Ray.Serilog.Sinks.WorkWeiXinAppBatched.csproj", "src/Ray.Serilog.Sinks/Ray.Serilog.Sinks.WorkWeiXinAppBatched/"]
 RUN dotnet restore "src/Ray.BiliBiliTool.Console/Ray.BiliBiliTool.Console.csproj"
 COPY . .
 WORKDIR "/code/src/Ray.BiliBiliTool.Console"
@@ -34,14 +36,15 @@ ENV TIME_ZONE=Asia/Shanghai
 COPY --from=publish /app/publish .
 COPY ./docker/entry.sh ./docker/crontab /app/
 RUN ln -fs /usr/share/zoneinfo/$TIME_ZONE /etc/localtime \
-    && echo $TIME_ZONE > /etc/timezone
-RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak \
+    && echo $TIME_ZONE > /etc/timezone \
+    && cp /etc/apt/sources.list /etc/apt/sources.list.bak \
 	&& sed -i 's/deb.debian.org/mirrors.163.com/g' /etc/apt/sources.list \
 	&& sed -i 's/security.debian.org/mirrors.163.com/g' /etc/apt/sources.list \
-	&& apt-get clean
-RUN apt-get update \
+	&& apt-get clean \ 
+    && apt-get update \
     && apt-get install -y cron tzdata tofrodos \
-    && apt-get clean
-RUN fromdos /app/entry.sh \
+    && apt-get clean \ 
+    && fromdos /app/entry.sh \
+    && chmod +x /app/entry.sh \
     && fromdos /app/crontab
 ENTRYPOINT ["/bin/bash", "-c", "/app/entry.sh"]

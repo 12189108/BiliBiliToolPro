@@ -1,4 +1,4 @@
-![2233](https://cdn.jsdelivr.net/gh/RayWangQvQ/BiliBiliTool.Docs@main/imgs/2233.png)
+![2233](docs/imgs/2233.png)
 
 <div align="center">
 
@@ -8,13 +8,13 @@ BiliBiliTool
 
 </h1>
 
-[![GitHub Stars](https://img.shields.io/github/stars/RayWangQvQ/BiliBiliTool?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliTool/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/RayWangQvQ/BiliBiliTool?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliTool/network)
-[![GitHub Issues](https://img.shields.io/github/issues/RayWangQvQ/BiliBiliTool?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliTool/issues)
-[![GitHub Contributors](https://img.shields.io/github/contributors/RayWangQvQ/BiliBiliTool?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliTool/graphs/contributors)
-[![GitHub All Releases](https://img.shields.io/github/downloads/RayWangQvQ/BiliBiliTool/total?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliTool/releases)
-![GitHub Release (latest SemVer)](https://img.shields.io/github/v/release/RayWangQvQ/BiliBiliTool?style=flat-square)
-[![GitHub License](https://img.shields.io/github/license/RayWangQvQ/BiliBiliTool?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliTool/blob/main/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/RayWangQvQ/BiliBiliToolPro?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliToolPro/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/RayWangQvQ/BiliBiliToolPro?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliToolPro/network)
+[![GitHub Issues](https://img.shields.io/github/issues/RayWangQvQ/BiliBiliToolPro?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliToolPro/issues)
+[![GitHub Contributors](https://img.shields.io/github/contributors/RayWangQvQ/BiliBiliToolPro?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliToolPro/graphs/contributors)
+[![GitHub All Releases](https://img.shields.io/github/downloads/RayWangQvQ/BiliBiliToolPro/total?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliToolPro/releases)
+![GitHub Release (latest SemVer)](https://img.shields.io/github/v/release/RayWangQvQ/BiliBiliToolPro?style=flat-square)
+[![GitHub License](https://img.shields.io/github/license/RayWangQvQ/BiliBiliToolPro?style=flat-square)](https://github.com/RayWangQvQ/BiliBiliToolPro/blob/main/LICENSE)
 
 </div>
 
@@ -29,6 +29,7 @@ BiliBiliTool
         - [1.2.2. 方式二：下载程序包到本地或服务器运行](#122-方式二下载程序包到本地或服务器运行)
         - [1.2.3. 方式三：腾讯云函数SCF](#123-方式三腾讯云函数scf)
         - [1.2.4. 方式四：docker容器化运行（推荐）](#124-方式四docker容器化运行推荐)
+        - [1.2.5. 方式五：青龙运行](#125-方式五青龙运行)
 - [2. 功能任务说明](#2-功能任务说明)
 - [3. 个性化自定义配置](#3-个性化自定义配置)
 - [4. 多账号支持](#4-多账号支持)
@@ -38,13 +39,11 @@ BiliBiliTool
     - [7.1. 贡献代码](#71-贡献代码)
     - [7.2. 贡献文档](#72-贡献文档)
 - [8. 捐赠支持](#8-捐赠支持)
-- [9. API 参考](#9-api-参考)
+- [9. 其他](#9-其他)
 
 <!-- /TOC -->
 
-**BiliBiliTool 是一个 B 站自动执行任务的工具，当我们忘记做 B 站的某项任务时，它会像一个小助手一样，按照我们预先吩咐她的命令，在指定时间、按照指定频率，帮助我们自动完成计划的任务。**
-
-比如，当我们忘记领取自己的大会员福利时，她会帮助我们在月初自动领取；当我们忘记完成每日任务时，她会辅助我们自动完成所有任务，获取每日的满额65点经验值，快速升级 Lv6 ；当然我们也可以用她来支持我们喜欢的up主，拒绝白嫖~
+**BiliBiliTool 是一个自动执行任务的工具，当我们忘记做某项任务时，它会像一个小助手一样，按照我们预先吩咐她的命令，在指定时间、按照指定频率，帮助我们自动完成计划的任务。**
 
 详细功能如下：
 
@@ -62,9 +61,9 @@ BiliBiliTool
 
 还有其他一些辅助小功能，大家可以自己去自由探索~
 
-![运行图示](https://cdn.jsdelivr.net/gh/RayWangQvQ/BiliBiliTool.Docs@main/imgs/run-exe.png)
+![运行图示](docs/imgs/run-exe.png)
 
-**Github 仓库地址：[RayWangQvQ/BiliBiliTool](https://github.com/RayWangQvQ/BiliBiliTool)**
+**Github 仓库地址：[RayWangQvQ/BiliBiliToolPro](https://github.com/RayWangQvQ/BiliBiliToolPro)**
 
 **注意：**
 
@@ -72,13 +71,11 @@ BiliBiliTool
 - **所有代码都是开源且透明的，任何人均可查看，程序不会保存或滥用任何用户的个人信息**
 - **应用内几乎所有功能都开放为了配置（如任务开关、日期、upId等），请仔细阅读配置文档，自己对自己的配置负责**
 
-_（如果图片挂了，是因为 GitHub 的服务器在国外，经常会刷不出，有梯子的可以架起梯子，没有的也可以先参考 [我的博客](https://www.cnblogs.com/RayWang/p/13909784.html)，但博客内容不保证最新)_
+_（如果图片挂了，请自己架梯子，没有的也可以先参考 [我的博客](https://www.cnblogs.com/RayWang/p/13909784.html)，但内容不保证最新)_
 
 ## 1. 如何使用
 
-BiliBiliTool 实现自动完成任务的原理，是通过调用一系列 B 站开放的api实现的。
-
-BiliBiliTool 就是收集了一系列api，通过每日自动运行程序，依次调用接口，来实现各任务的。
+BiliBiliTool 实现自动完成任务的原理，是通过调用一系列开放的api实现的。
 
 **要使用 BiliBiliTool，我们只需要做两步：获取自己的 Cookie 作为配置，然后将其输入 BiliBiliTool 并运行即可。**
 
@@ -93,11 +90,12 @@ BiliBiliTool 就是收集了一系列api，通过每日自动运行程序，依�
 
 ### 1.2. 第二步：配置 Cookie 并运行 BiliBiliTool
 
-运行 BiliBiliTool 主要有 4 种方式：
+运行 BiliBiliTool 主要有 5 种方式：
 * Github Actions
 * 下载Release包到本地或服务器运行
 * 云函数部署
 * docker容器化运行
+* 青龙运行
 
 熟悉 GitHub 的朋友，推荐使用方式一，可以实现线上的每天自动运行，不需自己动手，一劳永逸。
 
@@ -107,10 +105,12 @@ BiliBiliTool 就是收集了一系列api，通过每日自动运行程序，依�
 
 熟悉docker的朋友，可以跳转到方式四 docker容器化运行，以后因为可能涉及到需要持久话的功能，Serverless就不太方便，所以有能力、有条件的话还是建议使用docker。
 
-以下 4 种方式任选一种适合自己的即可。
+已经部署好了青龙面板跑其他自动任务的朋友，也可以直接在青龙面板中跑BiliBiliTool。
+
+以下 5 种方式任选一种适合自己的即可。
 
 #### 1.2.1. 方式一：xxx
-暂时删掉该方式避避风头，详情见 [552号议题](https://github.com/RayWangQvQ/BiliBiliTool/issues/552)。
+暂时删掉该方式避避风头。
 
 也建议所有还在使用该方式运行的朋友，暂时先替换为下面的其他运行方式，避免造成不必要的损失。
 
@@ -123,13 +123,13 @@ BiliBiliTool 就是收集了一系列api，通过每日自动运行程序，依�
 
 Ⅰ. **下载应用文件**
 
-点击 [BiliBiliTool/release](https://github.com/RayWangQvQ/BiliBiliTool/releases)，下载已发布的最新版本。
+点击 [BiliBiliTool/release](https://github.com/RayWangQvQ/BiliBiliToolPro/releases)，下载已发布的最新版本。
 
-* 如果本地已安装 `.NET 5.0` 环境：
+* 如果本地已安装 `.NET 6.0` 环境：
 
 请下载 `net-dependent.zip` 文件，本文件依赖本地运行库（runtime-dependent），所以文件包非常小（不到1M）。
 
-P.S.这里的运行环境指的是 `.NET Runtime 5.0.0` ，安装方法可详见 [常见问题](docs/questions.md) 中的 **本地或服务器如何安装.net环境**
+P.S.这里的运行环境指的是 `.NET Runtime 6.0.0` ，安装方法可详见 [常见问题](docs/questions.md) 中的 **本地或服务器如何安装.net环境**
 
 * 如果不希望安装或不知如何安装.net运行环境：
 
@@ -156,7 +156,12 @@ P.S.这里的运行环境指的是 `.NET Runtime 5.0.0` ，安装方法可详见
 
 对于已安装.net环境，且使用的是依赖包，同上，可在终端中执行命令：`dotnet Ray.BiliBiliTool.Console.dll`
 
-对于使用独立包的，可在终端中执行命令：`Ray.BiliBiliTool.Console`。
+对于使用独立包的，可在终端中执行命令：
+
+```
+chmod +x ./Ray.BiliBiliTool.Console
+Ray.BiliBiliTool.Console
+```
 
 其他系统依此类推，运行结果图示如下：
 
@@ -174,19 +179,23 @@ P.S.这里的运行环境指的是 `.NET Runtime 5.0.0` ，安装方法可详见
 
 [>>docker部署说明](docker/README.md)
 
+#### 1.2.5. 方式五：青龙运行
+
+[>>青龙部署教程](qinglong/README.md)
+
 
 
 如果配置了推送，执行成功后接收端会收到推送消息，推送效果如下所示：
 
 ![微信推送图示](docs/imgs/wechat-push.png)
 
-目前默认支持**PushPlus推送、企业微信推送、钉钉推送、Telegram推送、Server酱推送和酷推QQ推送**（以上顺序即为个人推荐的排序），如果需要推送到其他端，也可以配置为任意的可以接受消息的Api地址，关于如何配置推送请详见下面的**个性化自定义配置**章节。
+目前默认支持**PushPlus推送、企业微信应用推送、企业微信推送、钉钉推送、Microsoft Teams推送、Telegram推送、Server酱推送和酷推QQ推送**（以上顺序即为个人推荐的排序），如果需要推送到其他端，也可以配置为任意的可以接受消息的Api地址，关于如何配置推送请详见下面的**个性化自定义配置**章节。
 
 ## 2. 功能任务说明
 这里的**任务**是指一组功能的集合，是工具每次运行的最小单位。工具启动后会根据我们输入的任务编码，运行相应的任务，如：
 
 ```
-dotnet Ray.BiliBiliTool.Console.dll -runTasks=Daily
+dotnet Ray.BiliBiliTool.Console.dll --runTasks=Daily
 ```
 
 程序启动后，会执行任务Code为 `Daily` 的`每日经验任务`。
@@ -194,7 +203,7 @@ dotnet Ray.BiliBiliTool.Console.dll -runTasks=Daily
 可以通过使用 `&` 符拼接多个任务，程序启动后会按顺序依次执行指定的任务集合，如
 
 ```
-dotnet Ray.BiliBiliTool.Console.dll -runTasks=Daily&LiveLottery
+dotnet Ray.BiliBiliTool.Console.dll --runTasks=Daily&LiveLottery
 ```
 
 会依次运行`每日任务`和`天选抽奖任务`。
@@ -225,9 +234,9 @@ dotnet Ray.BiliBiliTool.Console.dll -runTasks=Daily&LiveLottery
 
 [>>点击查看常见问题文档](docs/questions.md)
 
-[issues（议题）](https://github.com/RayWangQvQ/BiliBiliTool/issues)板块可以用来提交**Bug**和**建议**；
+[issues（议题）](https://github.com/RayWangQvQ/BiliBiliToolPro/issues)板块可以用来提交**Bug**和**建议**；
 
-[discussions（讨论）](https://github.com/RayWangQvQ/BiliBiliTool/discussions)板块可以用来**提问**和**讨论**。
+[discussions（讨论）](https://github.com/RayWangQvQ/BiliBiliToolPro/discussions)板块可以用来**提问**和**讨论**。
 
 大部分问题其实都可以在文档、议题和讨论中找到答案。
 
@@ -242,7 +251,7 @@ dotnet Ray.BiliBiliTool.Console.dll -runTasks=Daily&LiveLottery
 
 ## 6. 版本发布及更新
 
-当前正处于稳定的迭代开发中，正常情况下每 2 周会发布一个小版本，详细待更新和计划内容可参见 [projects](https://github.com/RayWangQvQ/BiliBiliTool/projects) 和 [issues](https://github.com/RayWangQvQ/BiliBiliTool/issues) 。
+当前正处于稳定的迭代开发中，正常情况下每 2 周会发布一个小版本，详细待更新和计划内容可参见 [projects](https://github.com/RayWangQvQ/BiliBiliToolPro/projects) 和 [issues](https://github.com/RayWangQvQ/BiliBiliTool/issues) 。
 
 关于新版本发布后，如何同步最新的内容到自己 Fork 的仓库，可参考**常见问题文档**中的 《**我 Fork 之后如何同步原作者的更新内容？**》章节。
 
@@ -282,7 +291,7 @@ dotnet Ray.BiliBiliTool.Console.dll -runTasks=Daily&LiveLottery
 
 **☟☟☟ 扫码自动赞赏 1 元：☟☟☟**
 
-![赞赏码](https://cdn.jsdelivr.net/gh/RayWangQvQ/BiliBiliTool.Docs@main/imgs/donate.jpg)
+![赞赏码](docs/imgs/donate.jpg)
 
 另外，应用中的优先支持的UP主的配置项，默认是作者的 UpId （只是作为了 json 配置文件的默认值，代码是干净的），需要更改的话，直接修改相应配置即可（secrets或环境变量等各种方式都行）。
 
@@ -290,9 +299,18 @@ dotnet Ray.BiliBiliTool.Console.dll -runTasks=Daily&LiveLottery
 
 感谢支持~
 
-## 9. API 参考
+## 9. 其他
+
+`API`参考：
+
 - [www.bilibili.com](https://www.bilibili.com/)
 
 - [SocialSisterYi/bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect)
 
 - [JunzhouLiu/BILIBILI-HELPER](https://github.com/JunzhouLiu/BILIBILI-HELPER)
+
+感谢`JetBrain`提供的免费证书支持：
+
+Thanks to `JetBrain` for the free certificate support:
+
+![ReSharper logo](https://resources.jetbrains.com/storage/products/company/brand/logos/ReSharper.svg)

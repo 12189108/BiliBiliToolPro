@@ -1,0 +1,45 @@
+## 0.0.1
+- 重启项目
+- 支持[青龙面板](https://github.com/whyour/qinglong)部署
+## 0.0.2
+- 更新文档
+- 天选抽奖新增黑名单功能
+- 批量取关新增白名单功能
+## 0.0.3
+- 【#16】修复银瓜子兑换硬币bug
+- 【#18】修改[青龙面板](https://github.com/whyour/qinglong)以`Production`环境运行
+- [青龙面板](https://github.com/whyour/qinglong)新增拉取dev先行版功能
+## 0.0.4
+- 【#15】修复`Actions`部署到腾讯云函数时的偶发异常
+## 0.0.5
+- 优化推送日志，在标题中显示运行的任务名称
+- 新增`CodeQL`workflows，用于检测代码
+- 新增`Publish image`workflows，用于发布镜像
+- 新增`no-toxic-comments.yml`，用于检测评论
+- 更新`auto-close-pr.yml`，用于修正PR的目标到`develop`
+## 0.0.6
+- 更新docker镜像的构建
+- 【#12】新增配置`Notification:IsSingleAccountSingleNotify`，支持开启每个账号单独推送消息
+- publish-release.yml新增手动输入tag功能
+## 0.0.7
+- 【#44】兼容青龙最新版本（v2.12.0），修复因青龙调整目录结构导致的bug
+- 更新`publish-image.yml`，只有`release`时才打`latest tag`，手动运行时不打`latest tag`
+## 0.0.8
+- 【#55】新增日志推送端：`Microsoft Teams`
+- 【#27】更新README
+## 0.0.9
+- 【#47】青龙安装`dotnet`环境，支持arm架构服务器
+## 0.1.0
+- 【#62】`codeql-analysis.yml`可以指定检查的文件类型
+- 【#61】`publish-image.yml`手动打镜像时支持指定是否打latest的tag
+- 【#32】新增企业微信的应用推送，实现微信接受推送消息
+- 优化日志格式
+## 0.1.1
+- 【#54】优化青龙shell脚本读取仓库目录方式，解决青龙新老版本切换导致出现多个repo目录的bug
+- 【#82】【#85】合并外部PR，更新了文档
+- 感谢`JetBrain`提供免费的证书支持
+## 0.1.2
+- 修复`auto-close-pr.yml`分支错误的bug
+- 【#107】新增自动检测并关闭长时无状态issues的actions：no-response.yml
+- 【#73】【#105】【#108】更新、纠正文档内容
+- HostConfiguration，删除了CommandLine配置源，推荐只使用环境变量，同时更新青龙shell脚本内配置

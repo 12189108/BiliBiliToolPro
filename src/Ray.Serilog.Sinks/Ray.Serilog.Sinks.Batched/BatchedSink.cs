@@ -63,7 +63,8 @@ namespace Ray.Serilog.Sinks.Batched
                     {
                         waitingBatch.Enqueue(item);
                     }
-                    EmitBatch(waitingBatch);
+                    var pushTitle = GetPushTitle(logEvent);
+                    EmitBatch(waitingBatch, pushTitle);
                 }
             }
             catch (Exception ex)
@@ -72,7 +73,7 @@ namespace Ray.Serilog.Sinks.Batched
             }
         }
 
-        protected virtual void EmitBatch(IEnumerable<LogEvent> events)
+        protected virtual void EmitBatch(IEnumerable<LogEvent> events, string pushTitle = "")
         {
             if (_sendBatchesAsOneMessages)
             {
@@ -85,7 +86,7 @@ namespace Ray.Serilog.Sinks.Batched
                 sb.AppendLine(Environment.NewLine);
 
                 var messageToSend = sb.ToString();
-                PushMessage(messageToSend);
+                PushMessage(messageToSend, pushTitle);
             }
             else
             {
@@ -99,7 +100,7 @@ namespace Ray.Serilog.Sinks.Batched
 
         protected abstract PushService PushService { get; }
 
-        protected virtual void PushMessage(string message, string title = "Ray.BiliBiliTool任务推送")
+        protected virtual void PushMessage(string message, string title = "BiliBiliTool任务推送")
         {
             //SelfLog.WriteLine($"Trying to send message: '{message}'.");
             var result = PushService.PushMessage(message, title);
@@ -130,7 +131,7 @@ namespace Ray.Serilog.Sinks.Batched
                 msg = stringWriter.ToString();
             }
 
-            msg = $"{GetEmoji(logEvent)} {msg}";
+            //msg = $"{GetEmoji(logEvent)} {msg}";
 
             if (msg.Contains("经验+") && msg.Contains("√"))
                 msg = msg.Replace('√', '✔');
@@ -173,6 +174,22 @@ namespace Ray.Serilog.Sinks.Batched
                 default:
                     return string.Empty;
             }
+        }
+
+        protected virtual string GetPushTitle(LogEvent triggerLogEvent)
+        {
+            var title = "BiliBiliTool推送";
+
+            var msg = RenderMessage(triggerLogEvent).Replace(Environment.NewLine, "");
+            var list = msg.Split('·').ToList();
+
+            for (int i = 2; i < list.Count; i++)
+            {
+                if (!string.IsNullOrWhiteSpace(list[i]))
+                    title += $"-{list[i]}";
+            }
+
+            return title;
         }
 
         public abstract void Dispose();
